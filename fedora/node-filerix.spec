@@ -21,17 +21,13 @@ echo "Building node-filerix..."
 chmod +x scripts/install.sh
 ./scripts/install.sh --noinstall || { echo "Installation failed"; exit 1; }
 
-cmake -B build -S . -DCMAKE_INSTALL_PREFIX=%{buildroot}%{_libdir}/node_modules/filerix
-cmake --build build
-
 %install
-mkdir -p %{buildroot}%{_libdir}/node_modules/filerix
-cmake --install build --prefix=%{buildroot}%{_libdir}/node_modules/filerix
+cmake --install . --prefix=%{buildroot}
 
 %files
 %license LICENSE
 %doc README.md
-%{_libdir}/node_modules/filerix/filerix.node  
+%{_libdir}/node_modules/filerix/filerix.node
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
