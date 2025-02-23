@@ -5,7 +5,7 @@ Summary:        Node.js bindings for Filerix
 
 License:        MIT
 URL:            https://github.com/filesverse/node-filerix
-Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
+Source0:        https://github.com/filesverse/node-filerix/archive/refs/heads/main.tar.gz
 Source1:        https://github.com/microsoft/vcpkg/archive/refs/heads/master.tar.gz
 
 BuildRequires:  git, curl, tar, unzip, cmake, make, gcc-c++, nodejs, npm, systemd-devel
@@ -21,7 +21,7 @@ tar -xzf %{SOURCE1} --strip-components=1 -C vcpkg
 %build
 echo "Building node-filerix..."
 chmod +x scripts/build.sh
-./scripts/build.sh %{buildroot} || { echo "Installation failed"; exit 1; }
+./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
 cmake --install build --prefix=%{buildroot}
