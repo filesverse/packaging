@@ -25,6 +25,7 @@ chmod +x scripts/build.sh
 
 %install
 cmake --install build --prefix=%{buildroot}
+install -m 755 build/filerix.node %{buildroot}/usr/lib64/node_modules/filerix/filerix.node
 
 %files
 %license LICENSE
