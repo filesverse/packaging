@@ -21,11 +21,12 @@ echo "Building node-filerix..."
 chmod +x scripts/install.sh
 ./scripts/install.sh --noinstall || { echo "Installation failed"; exit 1; }
 
-cmake -B build -S . -DCMAKE_INSTALL_PREFIX=%{_libdir}/node_modules/filerix
+cmake -B build -S . -DCMAKE_INSTALL_PREFIX=%{buildroot}%{_libdir}/node_modules/filerix
 cmake --build build
 
 %install
-cmake --install build --prefix=%{buildroot}%{_libdir}/node_modules/filerix  
+mkdir -p %{buildroot}%{_libdir}/node_modules/filerix
+cmake --install build --prefix=%{buildroot}%{_libdir}/node_modules/filerix
 
 %files
 %license LICENSE
