@@ -24,11 +24,11 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
-cmake --install build --prefix=%{buildroot}
+cmake --install build
 
 %files
 %license LICENSE
-%{_libdir}/filerix/filerix.node
+%{_libdir}/filerix.node
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
