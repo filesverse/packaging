@@ -19,17 +19,18 @@ Node.js bindings for the Filerix file management library.
 %build
 echo "Building node-filerix..."
 chmod +x scripts/install.sh
-./scripts/install.sh || { echo "Installation failed"; exit 1; }
+./scripts/install.sh --noinstall || { echo "Installation failed"; exit 1; }
+
+cmake -B build -S . -DCMAKE_INSTALL_PREFIX=%{_libdir}/node_modules/filerix
+cmake --build build
 
 %install
-echo "Installing node-filerix..."
-mkdir -p %{buildroot}/usr/local/lib/node_modules/
-install -m 0755 /usr/local/lib/node_modules/filerix.node %{buildroot}/usr/local/lib/node_modules/filerix.node
+cmake --install build --prefix=%{buildroot}%{_libdir}/node_modules/filerix  
 
 %files
 %license LICENSE
 %doc README.md
-/usr/local/lib/node_modules/filerix.node
+%{_libdir}/node_modules/filerix/filerix.node  
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
