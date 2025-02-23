@@ -24,6 +24,7 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
+cp ./build/filerix.node %{buildroot}%{_libdir}
 cmake --install build --prefix=%{buildroot}%{_libdir}
 
 %files
