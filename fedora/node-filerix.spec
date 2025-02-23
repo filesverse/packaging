@@ -1,5 +1,5 @@
 Name:           node-filerix
-Version:        1.0.0
+Version:        1.1.0
 Release:        1%{?dist}
 Summary:        Node.js bindings for Filerix
 
@@ -32,5 +32,5 @@ cp -r build %{buildroot}%{_libdir}/node_modules/filerix
 %{_libdir}/node_modules/filerix
 
 %changelog
-* Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.0.0-1
+* Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
 - Initial release
