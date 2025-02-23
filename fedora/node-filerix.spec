@@ -21,14 +21,13 @@ tar -xzf %{SOURCE1} --strip-components=1 -C vcpkg
 %build
 echo "Building node-filerix..."
 chmod +x scripts/build.sh
-./scripts/build.sh || { echo "Installation failed"; exit 1; }
+./scripts/build.sh --prefix=%{buildroot} || { echo "Installation failed"; exit 1; }
 
 %install
 cmake --install build --prefix=%{buildroot}
 
 %files
 %license LICENSE
-%doc README.md
 %{_libdir}/node_modules/filerix/filerix.node
 
 %changelog
