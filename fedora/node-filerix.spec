@@ -8,8 +8,8 @@ URL:            https://github.com/filesverse/node-filerix
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 Source1:        https://github.com/microsoft/vcpkg/archive/refs/heads/master.tar.gz
 
-BuildRequires:  git, curl, tar, unzip, cmake, make, gcc-c++, nodejs, npm, systemd-devel
-Requires:       glibc, nodejs, filerix
+BuildRequires:  git, curl, tar, unzip, cmake, make, gcc-c++, nodejs, npm, systemd-devel sudo
+Requires:       nodejs, filerix
 
 %description
 Node.js bindings for the Filerix file management library.
@@ -24,7 +24,7 @@ chmod +x scripts/build.sh
 ./scripts/build.sh %{buildroot} || { echo "Installation failed"; exit 1; }
 
 %install
-cmake --install build --prefix=%{buildroot}
+sudo cmake --install build --prefix=%{buildroot}
 
 %files
 %license LICENSE
