@@ -15,6 +15,7 @@ Node.js bindings for the Filerix file management library.
 
 %prep
 %autosetup -n %{name}-%{version}
+git submodule update --init --recursive
 
 %build
 echo "Building node-filerix..."
