@@ -1,5 +1,5 @@
 Name:           node-filerix
-Version:        1.1.1
+Version:        1.1.0
 Release:        1%{?dist}
 Summary:        Node.js bindings for Filerix
 
@@ -23,13 +23,13 @@ chmod +x scripts/install.sh
 
 %install
 echo "Installing node-filerix..."
-mkdir -p %{buildroot}%{_libdir}/node_modules/filerix
-cp -r build %{buildroot}%{_libdir}/node_modules/filerix
+mkdir -p %{buildroot}/usr/local/lib/node_modules/
+install -m 0755 /usr/local/lib/node_modules/filerix.node %{buildroot}/usr/local/lib/node_modules/filerix.node
 
 %files
 %license LICENSE
 %doc README.md
-%{_libdir}/node_modules/filerix
+/usr/local/lib/node_modules/filerix.node
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
