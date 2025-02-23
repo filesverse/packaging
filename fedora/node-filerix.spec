@@ -15,7 +15,7 @@ Requires:       nodejs, filerix
 Node.js bindings for the Filerix file management library.
 
 %prep
-%autosetup -n %{name}-main
+%setup -q
 tar -xzf %{SOURCE1} --strip-components=1 -C vcpkg
 
 %build
