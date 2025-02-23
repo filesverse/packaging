@@ -18,8 +18,8 @@ Node.js bindings for the Filerix file management library.
 
 %build
 echo "Building node-filerix..."
-chmod +x scripts/install.sh
-./scripts/install.sh --noinstall || { echo "Installation failed"; exit 1; }
+chmod +x scripts/build.sh
+./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
 cmake --install build
