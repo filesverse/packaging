@@ -28,7 +28,7 @@ cmake --install build --prefix=%{buildroot}
 
 %files
 %license LICENSE
-%{_libdir}/node_modules/filerix/filerix.node
+%{_libdir}/filerix/filerix.node
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
