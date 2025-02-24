@@ -24,8 +24,7 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
-mkdir -p %{buildroot}%{_libdir}/node_modules/filerix
-install -m 755 ./build/filerix.node %{buildroot}%{_libdir}/node_modules/filerix/
+cmake --install build --prefix=%{buildroot}%{_prefix}
 
 %files
 %license LICENSE
