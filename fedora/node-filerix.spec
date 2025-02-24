@@ -26,13 +26,13 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
-mkdir -p %{buildroot}%{_libdir}/node_modules/filerix
-cp ./build/filerix.node %{buildroot}%{_libdir}/node_modules/filerix
-cmake --install build --prefix=%{buildroot}%{_libdir}
+mkdir -p %{buildroot}%{_datadir}/filerix
+cp ./build/filerix.node %{buildroot}%{_datadir}/filerix
+cmake --install build --prefix=%{buildroot}%{_datadir}
 
 %files
 %license LICENSE
-%{_libdir}/node_modules/filerix/filerix.node
+%{_datadir}/filerix/filerix.node
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
