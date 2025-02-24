@@ -33,7 +33,7 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
-cmake --install . --prefix=%{buildroot}
+cmake --install build --prefix=%{buildroot}
 
 %files
 %license LICENSE
