@@ -33,6 +33,8 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
+mkdir -p %{buildroot}%{_libdir}
+install -m 755 ./build/libfilerix.so %{buildroot}%{_libdir}/libfilerix.so
 cmake --install build --prefix=%{buildroot}
 
 %files
