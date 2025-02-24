@@ -8,9 +8,7 @@ URL:            https://github.com/filesverse/filerix
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 Source1:        https://github.com/microsoft/vcpkg/archive/refs/heads/master.tar.gz
 
-BuildRequires:  git, curl, tar, unzip, cmake, make
-BuildRequires:  systemd-devel
-
+BuildRequires:  git, curl, tar, unzip, cmake, make, systemd-devel, gcc-c++
 Requires:       glibc, udev
 
 %description
