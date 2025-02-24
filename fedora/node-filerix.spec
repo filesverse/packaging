@@ -18,6 +18,8 @@ Node.js bindings for the Filerix file management library.
 %autosetup -n %{name}-%{version}
 tar -xzf %{SOURCE1} --strip-components=1 -C vcpkg
 
+%global debug_package %{nil}
+
 %build
 echo "Building node-filerix..."
 chmod +x scripts/build.sh
