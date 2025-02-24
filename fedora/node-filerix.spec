@@ -24,12 +24,12 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
-mkdir -p %{buildroot}%{_datadir}/filerix
-cp ./build/filerix.node %{buildroot}%{_datadir}/filerix
+mkdir -p %{buildroot}%{_libdir}/node_modules/filerix
+install -m 755 ./build/filerix.node %{buildroot}%{_libdir}/node_modules/filerix/
 
 %files
 %license LICENSE
-%{_datadir}/filerix/filerix.node
+%{_libdir}/node_modules/filerix/filerix.node
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
