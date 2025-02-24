@@ -33,7 +33,6 @@ chmod +x scripts/build.sh
 ./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
-mkdir -p %{buildroot}%{_libdir}
 cmake --install build --prefix=%{buildroot}%{_prefix}
 
 %files
