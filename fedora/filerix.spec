@@ -34,7 +34,7 @@ chmod +x scripts/build.sh
 
 %install
 mkdir -p %{buildroot}%{_libdir}
-install -m 755 ./build/libfilerix.so %{buildroot}%{_libdir}/libfilerix.so
+install -m 755 ./build/src/libfilerix.so %{buildroot}%{_libdir}/libfilerix.so
 cmake --install build --prefix=%{buildroot}
 
 %files
