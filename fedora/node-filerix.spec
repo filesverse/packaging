@@ -25,7 +25,7 @@ chmod +x scripts/build.sh
 
 %install
 mkdir -p %{buildroot}%{_libdir}
-cp ./build/filerix.node %{buildroot}%{_libdir}
+cp ./build/filerix.node %{buildroot}%{_libdir}/node_modules/filerix
 cmake --install build --prefix=%{buildroot}%{_libdir}
 
 %files
