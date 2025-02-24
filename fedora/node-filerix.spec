@@ -28,7 +28,7 @@ chmod +x scripts/build.sh
 %install
 mkdir -p %{buildroot}%{_datadir}/filerix
 cp ./build/filerix.node %{buildroot}%{_datadir}/filerix
-cmake --install build --prefix=%{buildroot}%{_datadir}
+cmake --install build --prefix=%{buildroot}
 
 %files
 %license LICENSE
