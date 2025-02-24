@@ -1,13 +1,14 @@
 Name:           filerix
-Version:        1.0.2
+Version:        1.0.3
 Release:        1%{?dist}
 Summary:        A high-performance file management library
 
 License:        MIT
 URL:            https://github.com/filesverse/filerix
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
+Source1:        https://github.com/microsoft/vcpkg/archive/refs/heads/master.tar.gz
 
-BuildRequires:  git, curl tar, unzip
+BuildRequires:  git, curl, tar, unzip, cmake, make
 BuildRequires:  systemd-devel
 
 Requires:       glibc, udev
@@ -26,19 +27,12 @@ to develop applications using the Filerix library.
 
 %prep
 %autosetup -n %{name}-%{version}
+tar -xzf %{SOURCE1} --strip-components=1 -C vcpkg
 
 %build
-mkdir -p build
-cd build
-
-rm -rf ../vcpkg
-git clone --depth 1 https://github.com/microsoft/vcpkg ../vcpkg
-../vcpkg/bootstrap-vcpkg.sh
-
-../vcpkg/vcpkg --feature-flags=manifests install
-
-cmake ..
-cmake --build . --parallel
+echo "Building node-filerix..."
+chmod +x scripts/build.sh
+./scripts/build.sh || { echo "Installation failed"; exit 1; }
 
 %install
 cmake --install . --prefix=%{buildroot}
