@@ -34,7 +34,7 @@ chmod +x scripts/build.sh
 
 %install
 mkdir -p %{buildroot}%{_libdir}
-cmake --install build --prefix=%{buildroot}%{_libdir}
+cmake --install build --prefix=%{buildroot}%{_prefix}
 
 %files
 %license LICENSE
