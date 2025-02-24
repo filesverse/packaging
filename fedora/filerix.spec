@@ -44,6 +44,7 @@ cmake --install build --prefix=%{buildroot}%{_prefix}
 %files devel
 %{_includedir}/filerix/*
 %{_libdir}/pkgconfig/filerix.pc
+%{_datadir}/filerix/*
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.0.1-1
