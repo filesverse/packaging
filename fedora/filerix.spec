@@ -6,7 +6,6 @@ Summary:        A high-performance file management library
 License:        MIT
 URL:            https://github.com/filesverse/filerix
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
-Source1:        https://github.com/microsoft/vcpkg/archive/refs/heads/master.tar.gz
 
 BuildRequires:  git, curl, tar, unzip, cmake, make, systemd-devel, gcc-c++
 Requires:       glibc, udev
@@ -25,7 +24,6 @@ to develop applications using the Filerix library.
 
 %prep
 %autosetup -n %{name}-%{version}
-tar -xzf %{SOURCE1} --strip-components=1 -C vcpkg
 
 %build
 echo "Building node-filerix..."
