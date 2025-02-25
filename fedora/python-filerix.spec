@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Python bindings for Filerix
 
 License:        MIT
-URL:            https://github.com/filesverse/node-filerix
+URL:            https://github.com/filesverse/python-filerix
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  git, curl, tar, unzip, cmake, make, gcc-c++, python, systemd-devel
