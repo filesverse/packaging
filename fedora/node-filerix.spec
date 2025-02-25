@@ -1,5 +1,5 @@
 Name:           node-filerix
-Version:        1.1.1
+Version:        1.1.2
 Release:        1%{?dist}
 Summary:        Node.js bindings for Filerix
 
