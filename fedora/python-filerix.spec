@@ -31,5 +31,5 @@ make install PREFIX=%{buildroot}%{_prefix}
 %{_libdir}/python%{PYTHON_VERSION_MAJOR}.%{PYTHON_VERSION_MINOR}/site-packages/filerix*.so
 
 %changelog
-* Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.1.0-1
+* Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.0.0-1
 - Initial release
