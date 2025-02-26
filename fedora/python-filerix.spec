@@ -7,7 +7,7 @@ License:        MIT
 URL:            https://github.com/filesverse/python-filerix
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  git, curl, tar, unzip, cmake, make, gcc-c++, python, systemd-devel, perl, perl-IPC-Cmd, perl-FindBin, perl-lib, perl-Pod-Usage, kernel-headers, kernel-devel
+BuildRequires:  git, curl, tar, unzip, cmake, make, gcc-c++, python, systemd-devel, perl, perl-IPC-Cmd, perl-FindBin, perl-lib, perl-Pod-Usage, kernel-headers, kernel-devel, autoconf
 Requires:       python, filerix
 
 %description
