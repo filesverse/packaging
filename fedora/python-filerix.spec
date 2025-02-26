@@ -28,7 +28,7 @@ make install PREFIX=%{buildroot}%{_prefix}
 
 %files
 %license LICENSE
-%{_libdir}/python%{PYTHON_VERSION_MAJOR}.%{PYTHON_VERSION_MINOR}/site-packages/filerix*.so
+%{python3_sitelib}/filerix*.so
 
 %changelog
 * Fri Feb 14 2025 KingMaj0r <kingmaj0r@hotmail.com> - 1.0.0-1
